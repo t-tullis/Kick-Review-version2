@@ -1,15 +1,34 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+    <div class="posts">
+    <h1>Posts</h1>
+    This file will list all the posts.
+
+    <div v-for="post in posts">
+      <p>
+        <span><b>{{ post.title }}</b></span><br />
+        <span>{{ post.date }}</span> <br />
+        <span>{{ post.description }}</span>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
+import PostsService from '@/services/PostsService'
 export default {
-  name: 'HelloWorld',
+  name: 'posts',
   data () {
     return {
-      msg: 'Homepage of the app'
+      posts: []
+    }
+  },
+  mounted () {
+    this.getPosts()
+  },
+  methods: {
+    async getPosts () {
+      var response = await PostsService.fetchPosts()
+      console.log(this.posts = response.data.posts)
     }
   }
 }

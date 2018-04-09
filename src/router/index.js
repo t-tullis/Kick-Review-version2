@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Home'
-import Posts from '@/components/Posts'
+import newPost from '@/components/newPost'
 
 Vue.use(Router)
 
@@ -13,9 +13,9 @@ export default new Router({
       component: Home
     },
     {
-      path: '/posts',
-      name: 'Posts',
-      component: Posts
+      path: '/posts/new',
+      name: 'newPost',
+      component: newPost
     }
   ]
 })
