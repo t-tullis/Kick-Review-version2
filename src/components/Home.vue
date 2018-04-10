@@ -1,11 +1,11 @@
 <template>
-    <div class="posts">
-    <h1>Posts</h1>
+    <div class="Home">
+    <h1>Kick-Review</h1>
     This file will list all the posts.
 
     <div v-for="post in posts">
       <p>
-        <span><b>{{ post.title }}</b></span><br />
+        <router-link v-bind:to="{ name: 'Show', params: { id: post._id } }"><span><b>{{ post.title }}</b></span><br /></router-link>
         <span>{{ post.date }}</span> <br />
         <span>{{ post.description }}</span>
       </p>

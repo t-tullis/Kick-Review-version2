@@ -23,18 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true, }));
 app.use(bodyParser.json())
 app.use(cors())
 
-
-//Show all posts
-app.get('/posts', (req, res) => {
-  Post.find({}, 'title date description', function (error, posts) {
-    if (error) { console.error(error); }
-    res.send({
-      posts: posts
-    })
-  }).sort({_id:-1})
-})
-
-
 // Creates new post
 app.post('/posts', (req, res) => {
   var db = req.db;
@@ -46,6 +34,7 @@ app.post('/posts', (req, res) => {
     date: date,
     description: description
   })
+
 // Saves new post to DB
   newPost.save(function (error) {
     if (error) {
@@ -57,6 +46,51 @@ app.post('/posts', (req, res) => {
     })
   })
 })
+
+// Show all posts
+app.get('/posts', (req, res) => {
+  Post.find({}, 'title date description', function (error, posts) {
+    if (error) { console.error(error); }
+    res.send({
+      posts: posts
+    })
+  }).sort({_id:-1})
+})
+
+// Get a single post
+app.get('/post/:id', (req, res) => {
+  var db = req.db;
+  Post.findById(req.params.id, 'title date description', function (error, post) {
+    if (error) { console.error(error); }
+    res.send(post)
+  })
+})
+
+// Update a post
+app.put('/posts/:id', (req, res) => {
+  var db = req.db;
+  Post.findById(req.params.id, 'title description', function (error, post) {
+    if (error) { console.error(error); }
+
+    post.title = req.body.title
+    post.description = req.body.description
+    post.save(function (error) {
+      if (error) {
+        console.log(error)
+      }
+      res.send({
+        success: true
+      })
+    })
+  })
+})
+
+// D - Delete Post
+
+
+
+
+
 
 
 

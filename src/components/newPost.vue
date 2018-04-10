@@ -1,5 +1,5 @@
 <template>
-  <div class="posts">
+  <div class="newPost">
     <h1>Add Post</h1>
     <div class = "row">
       <form class="col s5">
