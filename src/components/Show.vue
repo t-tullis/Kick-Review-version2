@@ -42,3 +42,12 @@ export default {
 }
 
 </script>
+
+<style scoped>
+.Show{
+  margin-top: 5%;
+}  
+
+
+
+</style>

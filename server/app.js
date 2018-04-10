@@ -87,10 +87,19 @@ app.put('/posts/:id', (req, res) => {
 
 // D - Delete Post
 
-
-
-
-
+// Delete a post
+app.delete('/posts/:id', (req, res) => {
+  var db = req.db;
+  Post.remove({
+    _id: req.params.id
+  }, function(err, post){
+    if (err)
+      res.send(err)
+    res.send({
+      success: true
+    })
+  })
+})
 
 
 

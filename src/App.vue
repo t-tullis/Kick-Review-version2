@@ -1,13 +1,19 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <router-link v-bind:to="{ name: 'Home' }" class=""><img src="./assets/logo.png"></router-link>
+    <Navigation></Navigation>
     <router-view/>
   </div>
 </template>
 
 <script>
+import Navigation from '@/components/Navigation'
+
 export default {
-  name: 'App'
+  name: 'App',
+  components: {
+    Navigation
+  }
 }
 </script>
 

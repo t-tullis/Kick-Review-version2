@@ -13,7 +13,7 @@
           <textarea class="materialize-textarea" placeholder="DESCRIPTION" v-model="description"></textarea>
         </div>
         <div>
-          <button class="waves-effect waves-light btn-small" @click="addPost">Add</button>
+          <button class="waves-effect waves-light btn-small"><a href="/" @click="addPost">Add</a></button>
         </div>
       </form>
     </div>
@@ -44,3 +44,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+a{
+  color: white;
+}
+</style>
