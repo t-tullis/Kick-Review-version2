@@ -1,7 +1,6 @@
 <template>
     <div class="Home">
-    <h1>Kick-Review</h1>
-    This file will list all the posts.
+    <h1>{{msg}}</h1>
 
     <div v-for="post in posts">
       <p>
@@ -19,7 +18,8 @@ export default {
   name: 'posts',
   data () {
     return {
-      posts: []
+      posts: [],
+      msg: new Date().toLocaleString()
     }
   },
   mounted () {
@@ -48,6 +48,6 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #42b983;
+  color: #C62D28;
 }
 </style>

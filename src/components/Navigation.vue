@@ -26,6 +26,6 @@ li {
   margin: 25px 80px 0px 80px;
 }
 a {
-  color: #42b983;
+  color: #C62D28;
 }
 </style>

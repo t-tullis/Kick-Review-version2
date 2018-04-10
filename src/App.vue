@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <router-link v-bind:to="{ name: 'Home' }" class=""><img src="./assets/logo.png"></router-link>
+    <router-link v-bind:to="{ name: 'Home' }" class=""><img src="./assets/KickReviewLogo.jpg"></router-link>
     <Navigation></Navigation>
     <router-view/>
   </div>
@@ -25,5 +25,10 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+img{
+  width: 300px;
+  height: 200px;
 }
 </style>
