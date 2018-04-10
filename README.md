@@ -18,7 +18,7 @@ ERD
 - https://www.lucidchart.com/invitations/accept/1ce71cbf-88bc-4aef-8359-65cd205bf529
 
 Wireframes
-- https://s3.amazonaws.com/assets.mockflow.com/app/wireframepro/fileexport/Export_Ddf9d32a60142cb08dd6183e9edf0f66e.pdf
+- https://slack-files.com/T0351JZQ0-FA4AH5YTV-c0390c7501
 
 Milestones
 - Create User & Posts DB 
