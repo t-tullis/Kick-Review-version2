@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div class="Navigation">
     <ul>
       <li><router-link v-bind:to="{ name: 'Admin' }" class="">Admin</router-link></li>
       <li><router-link v-bind:to="{ name: 'Home' }" class="">Adidas</router-link></li>
@@ -13,7 +13,7 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'Navigation',
   data () {
     
   }
