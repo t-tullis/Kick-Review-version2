@@ -1,13 +1,13 @@
 <template>
     <div class="Home">
-    <h1>{{msg}}</h1>
 
-    <div v-for="post in posts">
-      <p>
-        <router-link v-bind:to="{ name: 'Show', params: { id: post._id } }"><span><b>{{ post.title }}</b></span><br /></router-link>
-        <span>{{ post.date }}</span> <br />
-        <span>{{ post.description }}</span>
-      </p>
+      <div v-for="post in posts">
+        <div class='post'>
+          <router-link v-bind:to="{ name: 'Show', params: { id: post._id } }">
+            <h5>{{ post.title }}</h5> 
+            <p>{{ post.date }}</p><br />
+          </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -18,8 +18,7 @@ export default {
   name: 'posts',
   data () {
     return {
-      posts: [],
-      msg: new Date().toLocaleString()
+      posts: []
     }
   },
   mounted () {
@@ -36,6 +35,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
 h1, h2 {
   font-weight: normal;
 }
@@ -50,4 +50,15 @@ li {
 a {
   color: #C62D28;
 }
+
+.Home{
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 200px;
+}
+
+.post{
+  margin-top: 60px;
+}
+
 </style>

@@ -1,18 +1,20 @@
 <template>
   <div id="app">
-    <router-link v-bind:to="{ name: 'Home' }" class=""><img src="./assets/KickReviewLogo.jpg"></router-link>
+    <router-link v-bind:to="{ name: 'Home' }" class=""><img src="./assets/KickReviewLogo.png"></router-link>
     <Navigation></Navigation>
+    <Clock></Clock>
     <router-view/>
   </div>
 </template>
 
 <script>
 import Navigation from '@/components/Navigation'
+import Clock from '@/components/Clock'
 
 export default {
   name: 'App',
   components: {
-    Navigation
+    Navigation, Clock
   }
 }
 </script>
@@ -29,6 +31,6 @@ export default {
 
 img{
   width: 300px;
-  height: 200px;
+  height: 100px;
 }
 </style>
