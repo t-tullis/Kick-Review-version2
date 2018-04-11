@@ -1,4 +1,3 @@
-//
 var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
@@ -10,11 +9,6 @@ app = express()
 //requiring post 
 var Post = require("./models/posts")
 
-app.get('/', (req, res) => {
-  res.send('Kick-Review API')
-
-})
-
 
 //Connection to DB
 var db = mongoose.connection;
@@ -24,10 +18,17 @@ db.once("open", function(callback){
 });
 mongoose.connect('mongodb://localhost:27017/posts');
 
+//Middleware
 app.use(morgan('combined'))
 app.use(bodyParser.urlencoded({ extended: true, }));
 app.use(bodyParser.json())
 app.use(cors())
+
+//Blog Post API 
+app.get('/', (req, res) => {
+  res.send('Kick-Review API')
+
+})
 
 // Creates new post
 app.post('/posts', (req, res) => {
@@ -75,10 +76,11 @@ app.get('/post/:id', (req, res) => {
 // Update a post
 app.put('/posts/:id', (req, res) => {
   var db = req.db;
-  Post.findById(req.params.id, 'title description', function (error, post) {
+  Post.findById(req.params.id, 'title date description', function (error, post) {
     if (error) { console.error(error); }
 
     post.title = req.body.title
+    post.date = req.body.date
     post.description = req.body.description
     post.save(function (error) {
       if (error) {

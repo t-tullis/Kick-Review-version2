@@ -66,4 +66,8 @@ export default {
   background-color: #C62D28;
 }
 
+textarea{
+  height: 100px
+}
+
 </style>

@@ -56,4 +56,8 @@ a{
 .addPost{
   margin: 0px 40px;
 }
+
+textarea{
+  height: 100px;
+}
 </style>
