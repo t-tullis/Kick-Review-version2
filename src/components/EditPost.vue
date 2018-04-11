@@ -62,4 +62,8 @@ export default {
   margin: 0px 40px;
 }
 
+.btn-small{
+  background-color: #C62D28;
+}
+
 </style>

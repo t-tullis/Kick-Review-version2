@@ -50,6 +50,9 @@ a{
   color: white;
 }
 
+.btn-small{
+  background-color: #C62D28;
+}
 .addPost{
   margin: 0px 40px;
 }

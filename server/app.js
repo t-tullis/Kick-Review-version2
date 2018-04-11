@@ -10,6 +10,12 @@ app = express()
 //requiring post 
 var Post = require("./models/posts")
 
+app.get('/', (req, res) => {
+  res.send('Kick-Review API')
+
+})
+
+
 //Connection to DB
 var db = mongoose.connection;
 db.on("error", console.error.bind(console, "connection error"));

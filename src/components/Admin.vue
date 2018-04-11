@@ -61,7 +61,7 @@ table{
 }
 
 .btn-small{
-  background-color: #B4ABA0;
+  background-color: #C62D28;
 }
 
 

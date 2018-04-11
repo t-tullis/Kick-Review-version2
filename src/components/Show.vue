@@ -1,13 +1,13 @@
 <template>
     <div class="Show">
-      <div>
-        {{title}}
+      <div class= 'title'>
+        <h1>{{title}}</h1>
       </div>
       <div>
-        {{date}}
+        <h5>{{date}}</h5>
       </div>
-      <div>
-        {{description}}
+      <div class= 'description'>
+        <p>{{description}}</p>
       </div>      
   </div>
 </template>
@@ -48,6 +48,8 @@ export default {
   margin-top: 5%;
 }  
 
-
+.description{
+  margin: 0px 300px;
+}
 
 </style>
