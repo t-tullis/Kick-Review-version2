@@ -4,6 +4,7 @@
       <div v-for="post in posts">
         <div class='post'>
           <router-link v-bind:to="{ name: 'Show', params: { id: post._id } }">
+            <img v-bind:src = 'post.picture'>
             <h5>{{ post.title }}</h5>
           </router-link>
             <p>{{ post.date }}</p>
@@ -65,6 +66,12 @@ a :hover{
 
 .post{
   margin-top: 60px;
+}
+
+img{
+  height: 300px;
+  width: 450px;
+  border-radius: 8px; 
 }
 
 </style>
