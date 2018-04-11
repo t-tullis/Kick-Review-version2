@@ -4,6 +4,9 @@
         <h2>{{title}}</h2>
       </div>
       <div>
+        <img v-bind:src = 'picture'>
+      </div>
+      <div>
         <h5>{{date}}</h5>
       </div>
       <div class= 'description'>
@@ -15,7 +18,6 @@
 
 
 <script>
-
 import PostsService from '@/services/PostsService'
 export default {
   name: 'Show',
@@ -23,6 +25,7 @@ export default {
     return {
       title: '',
       date: '',
+      picture: '',
       description: ''
     }
   },
@@ -36,6 +39,7 @@ export default {
       })
       this.title = response.data.title
       this.date = response.data.date
+      this.picture = response.data.picture
       this.description = response.data.description
     },
   }
@@ -50,6 +54,12 @@ export default {
 
 .description{
   margin: 0px 300px;
+}
+
+img{
+  width: 800px;
+  height: 500px;
+  border-radius: 8px;
 }
 
 </style>

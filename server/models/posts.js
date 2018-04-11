@@ -4,6 +4,7 @@ var mongoose = require("mongoose"),
 var PostSchema = new Schema({
   title: String,
   date: String,
+  picture: String,
   description: String,
 });
 

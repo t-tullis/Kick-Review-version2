@@ -10,6 +10,9 @@
             <input type="text" name="date" placeholder="DATE" v-model="date">
           </div>
           <div>
+            <input type="text" name="picture" placeholder="PICTURE" v-model="picture">
+          </div>
+          <div>
             <textarea class="materialize-textarea" placeholder="DESCRIPTION" v-model="description"></textarea>
           </div>
           <div>
@@ -28,6 +31,7 @@ export default {
     return {
       title: '',
       date: '',
+      picture: '',
       description: ''
     }
   },
@@ -41,6 +45,7 @@ export default {
       })
       this.title = response.data.title
       this.date = response.data.date
+      this.picture = response.data.picture
       this.description = response.data.description
     },
     async updatePost () {
@@ -48,6 +53,7 @@ export default {
         id: this.$route.params.id,
         title: this.title,
         date: this.date,
+        picture: this.picture,
         description: this.description
       })
         this.$router.push({ name: 'Posts' })

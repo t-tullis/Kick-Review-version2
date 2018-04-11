@@ -35,10 +35,12 @@ app.post('/posts', (req, res) => {
   var db = req.db;
   var title = req.body.title;
   var date = req.body.date;
+  var picture = req.body.picture;
   var description = req.body.description;
   var newPost = new Post({
     title: title,
     date: date,
+    picture: picture,
     description: description
   })
 
@@ -56,7 +58,7 @@ app.post('/posts', (req, res) => {
 
 // Show all posts
 app.get('/posts', (req, res) => {
-  Post.find({}, 'title date description', function (error, posts) {
+  Post.find({}, 'title date picture description', function (error, posts) {
     if (error) { console.error(error); }
     res.send({
       posts: posts
@@ -67,7 +69,7 @@ app.get('/posts', (req, res) => {
 // Get a single post
 app.get('/post/:id', (req, res) => {
   var db = req.db;
-  Post.findById(req.params.id, 'title date description', function (error, post) {
+  Post.findById(req.params.id, 'title date picture description', function (error, post) {
     if (error) { console.error(error); }
     res.send(post)
   })
@@ -76,11 +78,12 @@ app.get('/post/:id', (req, res) => {
 // Update a post
 app.put('/posts/:id', (req, res) => {
   var db = req.db;
-  Post.findById(req.params.id, 'title date description', function (error, post) {
+  Post.findById(req.params.id, 'title date picture description', function (error, post) {
     if (error) { console.error(error); }
 
     post.title = req.body.title
     post.date = req.body.date
+    post.picture = req.body.picture
     post.description = req.body.description
     post.save(function (error) {
       if (error) {
