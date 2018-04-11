@@ -21,7 +21,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Signika', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -30,7 +30,8 @@ export default {
 }
 
 img{
-  width: 300px;
-  height: 100px;
+  width: 400px;
+  height: 150px;
 }
+
 </style>

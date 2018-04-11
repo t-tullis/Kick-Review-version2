@@ -1,6 +1,6 @@
 <template>
   <div class="Navigation">
-    <ul>
+    <ul class="navBackground">
       <li><router-link v-bind:to="{ name: 'Admin' }" class="">Admin</router-link></li>
       <li><router-link v-bind:to="{ name: 'Home' }" class="">Adidas</router-link></li>
       <li><router-link v-bind:to="{ name: 'Home' }" class="">Jordan</router-link></li>
@@ -26,6 +26,10 @@ li {
   margin: 25px 80px 0px 80px;
 }
 a {
-  color: #C62D28;
+  color: white;
+}
+
+.navBackground{
+  background-color: black;
 }
 </style>

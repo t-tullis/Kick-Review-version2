@@ -2,7 +2,7 @@
   <div class="posts">
     <h1>Edit Post</h1>
       <div class = "row">
-        <form class="col s5">
+        <form class="editPost">
           <div>
             <input type="text" name="title" placeholder="TITLE" v-model="title">
           </div>
@@ -55,3 +55,11 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+
+.editPost{
+  margin: 0px 40px;
+}
+
+</style>

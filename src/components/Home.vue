@@ -57,7 +57,8 @@ a :hover{
 
 .Home{
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-around;
   margin: 0px 200px;
 }
 

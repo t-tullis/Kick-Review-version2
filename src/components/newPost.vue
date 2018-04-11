@@ -2,7 +2,7 @@
   <div class="newPost">
     <h1>Add Post</h1>
     <div class = "row">
-      <form class="col s5">
+      <form class="addPost">
         <div>
           <input type="text" name="title" placeholder="TITLE" v-model="title">
         </div>
@@ -48,5 +48,9 @@ export default {
 <style scoped>
 a{
   color: white;
+}
+
+.addPost{
+  margin: 0px 40px;
 }
 </style>

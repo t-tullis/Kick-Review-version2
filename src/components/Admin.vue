@@ -60,4 +60,9 @@ table{
   margin-top: 20px;
 }
 
+.btn-small{
+  background-color: #B4ABA0;
+}
+
+
 </style>
