@@ -4,9 +4,9 @@
       <div v-for="post in posts">
         <div class='post'>
           <router-link v-bind:to="{ name: 'Show', params: { id: post._id } }">
-            <h5>{{ post.title }}</h5> 
-            <p>{{ post.date }}</p><br />
+            <h5>{{ post.title }}</h5>
           </router-link>
+            <p>{{ post.date }}</p>
       </div>
     </div>
   </div>
@@ -48,6 +48,10 @@ li {
   margin: 0 10px;
 }
 a {
+  color: black;
+}
+
+a :hover{
   color: #C62D28;
 }
 
