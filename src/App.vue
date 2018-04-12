@@ -21,7 +21,7 @@ export default {
 
 <style>
 #app {
-  font-family: 'Viga', Helvetica, Arial, sans-serif;
+  font-family: 'Do Hyeon', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

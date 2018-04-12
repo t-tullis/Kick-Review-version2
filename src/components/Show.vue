@@ -1,10 +1,10 @@
 <template>
     <div class="Show">
       <div class= 'title'>
-        <h2>{{title}}</h2>
-      </div>
       <div>
-        <img v-bind:src = 'picture'>
+        <img class='mainpic' v-bind:src = 'picture'>
+      </div>
+        <h2>{{title}}</h2>
       </div>
       <div>
         <h5>{{date}}</h5>
@@ -12,6 +12,13 @@
       <div class= 'description'>
         <p>{{description}}</p>
       </div>      
+      <div>
+        <img v-bind:src ='angle1'>
+        <br />
+        <img v-bind:src ='angle2'>
+        <br />
+        <img v-bind:src ='angle3'>
+      </div>
   </div>
 </template>
 
@@ -26,6 +33,9 @@ export default {
       title: '',
       date: '',
       picture: '',
+      angle1: '',
+      angle2: '',
+      angle3: '',
       description: ''
     }
   },
@@ -40,6 +50,9 @@ export default {
       this.title = response.data.title
       this.date = response.data.date
       this.picture = response.data.picture
+      this.angle1 = response.data.angle1
+      this.angle2 = response.data.angle2
+      this.angle3 = response.data.angle3
       this.description = response.data.description
     },
   }
@@ -56,10 +69,19 @@ export default {
   margin: 0px 300px;
 }
 
+.mainpic{
+  width: 1100px;
+  height: 700px;
+}
+
 img{
   width: 800px;
   height: 500px;
   border-radius: 8px;
+}
+
+p{
+  font-size: 17px;
 }
 
 </style>

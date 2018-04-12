@@ -5,6 +5,9 @@ var PostSchema = new Schema({
   title: String,
   date: String,
   picture: String,
+  angle1: String,
+  angle2: String,
+  angle3: String,
   description: String,
 });
 

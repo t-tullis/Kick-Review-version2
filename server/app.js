@@ -36,11 +36,17 @@ app.post('/posts', (req, res) => {
   var title = req.body.title;
   var date = req.body.date;
   var picture = req.body.picture;
+  var angle1 = req.body.angle1;
+  var angle2 = req.body.angle2;
+  var angle3 = req.body.angle3;
   var description = req.body.description;
   var newPost = new Post({
     title: title,
     date: date,
     picture: picture,
+    angle1 : angle1,
+    angle2 : angle2,
+    angle3 : angle3,
     description: description
   })
 
@@ -58,7 +64,7 @@ app.post('/posts', (req, res) => {
 
 // Show all posts
 app.get('/posts', (req, res) => {
-  Post.find({}, 'title date picture description', function (error, posts) {
+  Post.find({}, 'title date picture angle1 angle2 angle3 description', function (error, posts) {
     if (error) { console.error(error); }
     res.send({
       posts: posts
@@ -69,7 +75,7 @@ app.get('/posts', (req, res) => {
 // Get a single post
 app.get('/post/:id', (req, res) => {
   var db = req.db;
-  Post.findById(req.params.id, 'title date picture description', function (error, post) {
+  Post.findById(req.params.id, 'title date picture angle1 angle2 angle3 description', function (error, post) {
     if (error) { console.error(error); }
     res.send(post)
   })
@@ -78,12 +84,15 @@ app.get('/post/:id', (req, res) => {
 // Update a post
 app.put('/posts/:id', (req, res) => {
   var db = req.db;
-  Post.findById(req.params.id, 'title date picture description', function (error, post) {
+  Post.findById(req.params.id, 'title date picture angle1 angle2 angle3 description', function (error, post) {
     if (error) { console.error(error); }
 
     post.title = req.body.title
     post.date = req.body.date
     post.picture = req.body.picture
+    post.angle1 = req.body.angle1
+    post.angle2 = req.body.angle2
+    post.angle3 = req.body.angle3
     post.description = req.body.description
     post.save(function (error) {
       if (error) {

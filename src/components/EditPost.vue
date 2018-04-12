@@ -13,6 +13,15 @@
             <input type="text" name="picture" placeholder="PICTURE" v-model="picture">
           </div>
           <div>
+            <input type="text" name="angle1" placeholder="ANGLE1" v-model="angle1">
+          </div>
+          <div>
+            <input type="text" name="angle2" placeholder="ANGLE2" v-model="angle2">
+          </div>
+          <div>
+            <input type="text" name="angle3" placeholder="ANGLE3" v-model="angle3">
+          </div>
+          <div>
             <textarea class="materialize-textarea" placeholder="DESCRIPTION" v-model="description"></textarea>
           </div>
           <div>
@@ -32,6 +41,9 @@ export default {
       title: '',
       date: '',
       picture: '',
+      angle1: '',
+      angle2: '',
+      angle3: '',
       description: ''
     }
   },
@@ -46,6 +58,9 @@ export default {
       this.title = response.data.title
       this.date = response.data.date
       this.picture = response.data.picture
+      this.angle1 = response.data.angle1
+      this.angle2 = response.data.angle2
+      this.angle3 = response.data.angle3
       this.description = response.data.description
     },
     async updatePost () {
@@ -54,6 +69,9 @@ export default {
         title: this.title,
         date: this.date,
         picture: this.picture,
+        angle1: this.angle1,
+        angle2: this.angle2,
+        angle3: this.angle3,
         description: this.description
       })
         this.$router.push({ name: 'Posts' })
