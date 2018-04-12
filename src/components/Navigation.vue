@@ -32,7 +32,7 @@ li {
   color: black;
 }
 
-.nav :hover{
+.links :hover{
   color: #C62D28;
 }
 
