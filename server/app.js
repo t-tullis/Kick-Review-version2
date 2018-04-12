@@ -16,8 +16,7 @@ db.on("error", console.error.bind(console, "connection error"));
 db.once("open", function(callback){
   console.log("Connection Succeeded");
 });
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/posts');
-
+mongoose.connect('mongodb://localhost:27017/posts');
 
 //Middleware
 app.use(morgan('combined'))
@@ -121,6 +120,7 @@ app.delete('/posts/:id', (req, res) => {
     })
   })
 })
+
 
 
 app.listen(process.env.PORT || 8081)
